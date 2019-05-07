@@ -1,0 +1,15 @@
+To prevent so-called session thefts from occurring, it is always good to define different names for session cookies. For example, the default name used by PHP to save session ids is "PHPSESSID". So changing that name will make it harder for any cracker to take advantage of your application.
+
+Another interesting tip is to use different names for each access and link it to something from visitor access.
+
+
+
+<?php
+ 
+session_name(md5('seg'.$_SERVER['REMODE_ADDR'].$_SERVER['HTTP_USER_AGENT']));
+ ?>
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+
+
